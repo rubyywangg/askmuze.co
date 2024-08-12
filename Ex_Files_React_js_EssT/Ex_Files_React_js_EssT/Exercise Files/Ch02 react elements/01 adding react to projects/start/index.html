@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!--adding links to the CDN (Content Delivery Network) of react-->
+    <!--these links are essentially a way to quickly add react library to your page in the browser-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"crossorigin></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div><!--usually the place where you add your react code has the id = "root"-->
+    <!--(with HTML) <h1>Getting Started with React</h1>-->
+    <!--(with React)-->
+    <script type = "text/javascript">
+      ReactDOM.render(
+        React.createElement( //creates a react element
+          "h1",
+          null,
+          "Getting Started with React"
+        ),
+        document.getElementById("root") //finds the "root" element on the page and injects our react element which we created on line 17 into it
+      )
+      </script>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+notice that we've been using index.html so far to house our react components and run them locally in the browser
+this takes us pretty far, but its much better and efficient to use a tool called create react app and thats what well be using !

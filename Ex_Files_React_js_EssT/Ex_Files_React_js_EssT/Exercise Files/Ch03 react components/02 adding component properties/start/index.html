@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!--now let's start playing around with properties (aka props)-->
+    <script type="text/babel">
+      function Header(props) { {/*props are passed in as an object*/}
+        return (
+          <header>
+            {/*to access a property, call on the props object and then the property name, te actual value of the property will be defined below in the function call (look at App*/}
+            <h1>{props.name} Kitchen</h1>
+          </header>
+        );
+      }
+      function Main(props) {
+        return (
+          <section>
+            <p>
+              We serve the most {props.adjective} food around.
+            </p>
+          </section>
+        );
+      }
+
+      function Footer (props){
+        return(
+          <footer>
+            <p>Copyright {props.year}</p>
+          </footer>
+        )
+      }
+      function App() {
+        return (
+          <div>
+            <Header name = "Ruby's"/> {/*this is where you initialize/set the values of the properties!*/}
+            <Main adjective = "yummy"/>
+            <footer year = {new Date().getFullYear()}/> {/*you can also pass in expressions as properties*/}
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>

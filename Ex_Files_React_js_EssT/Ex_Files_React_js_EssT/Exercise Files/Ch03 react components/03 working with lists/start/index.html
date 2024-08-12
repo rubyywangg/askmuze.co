@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Header(props) {
+        return (
+          <header>
+            <h1>{props.name}'s Kitchen</h1>
+          </header>
+        );
+      }
+
+      const dishes = [
+        "Macaroni and Cheese",
+        "Salmon",
+        "Tofu with Vegetables",
+      ];
+
+      function Main(props) {
+        return (
+          <section>
+            <ul>
+              {props.dishes.map(dish => (<li>{dish}</li>))} {/*keep in mind dishes here doesn't refer to the array yet, its just a placeholder for any array that you'll pass through later when you call the function*/}
+            </ul>
+          </section>
+        );
+      }
+
+      function Footer(props) {
+        return (
+          <footer>
+            <p>Copyright {props.year}</p>
+          </footer>
+        );
+      }
+      {/*here the code works, however there is an underlying error in the console, which says "each child should have a unique "key" prop...we will fix this in the next lesson*/}
+      function App() {
+        return (
+          <div>
+            <Header name="Ruby" />
+            <Main adjective="amazing" dishes = {dishes}/> {/*here we pass in the array of dishes, so dishes property is referring to the actual dishes array*/}
+            <Footer
+              year={new Date().getFullYear()}
+            />
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+     <!--let's import the babel script so that we get rid of the error-->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel"> //change this to babel as well, this will let babel go thru all the code in the script tag and convert it the element calls that dont work in the browser to ones that do
+      //using JSX now!
+      ReactDOM.render(
+        <ul> {/*however as soon as we hit this line of code where we are using a JSX tag, the code runs into a "unexpected token error", this is because JSX is not supported by browsers*/}
+          {/*to fix this we need to import a tool (e.g. Babel) also, this is the format for JSX comments LOL*/}
+          {/*this is not the most effective wat of using babel, but for now, its an efficient way to just get the code to output and work*/}
+          <li>🤖</li>
+          <li>🤠</li>
+          <li>🌝</li>
+        </ul>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>

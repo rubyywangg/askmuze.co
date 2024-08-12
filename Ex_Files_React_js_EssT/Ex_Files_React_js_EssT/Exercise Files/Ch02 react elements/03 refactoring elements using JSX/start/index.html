@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <title>React ⚛️</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      //let's make this an unordered list!
+      let ul = React.createElement(
+        "ul",//type of element
+        {style: {color: "blue"}},//props
+        React.createElement("li", null, "Monday"),//children
+        React.createElement("li", null, "Tuesday"),//children
+        React.createElement("li", null, "Wednesday"),//children
+        //notice how the code can get a little hectic now, because all the children need its own createElement
+        //to help with this, we can use a helper called JSX (JavaScript XML)
+        //JSX is an HTML like syntax for creating UI elements in React
+      );
+
+      ReactDOM.render(
+        ul,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>

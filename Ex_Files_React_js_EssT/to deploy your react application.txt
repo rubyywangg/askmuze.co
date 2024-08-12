@@ -1,0 +1,8 @@
+to deploy your react application (manual version)
+
+- go into your finished files
+- usually you should be in the react-app folder of your finished project
+- in terminal run "npm install"
+- in terminal run "npm run build"
+- now using Netlify or any other react deployment website, drag and drop your folder with the optimized code for production (usually the folder called build)
+- in netlify, if you click "Open production deploy" it should open ur website!!!
